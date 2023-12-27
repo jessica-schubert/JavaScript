@@ -36,16 +36,30 @@ console.log(oddEven(10));
 
 // TODO: Implement the oldYoung function
 
-function oldYoung(a) {
+/*function oldYoung(a) {
   if (a < 16 && a >= 0) {
     return "children";
   } else if (a < 50 && a >= 0) {
     return "young person";
   } else if (a > 50) {
     return "elder person";
-  } else if (a !== Number || a < 0) {
+  } else if (typeof a != "number" || a < 0) {
     return "invalid parameter";
   }
+}*/
+
+// Schöner:
+function oldYoung(a) {
+  if (typeof a != "number" || a < 0) {
+    return "invalid parameter";
+  }
+  if (a < 16) {
+    return "children";
+  }
+  if (a < 50) {
+    return "young person";
+  }
+  return "elder person";
 }
 
 console.log(oldYoung(27));
